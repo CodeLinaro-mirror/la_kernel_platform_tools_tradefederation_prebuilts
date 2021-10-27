@@ -15,7 +15,9 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
-ifeq (,$(wildcard $(LOCAL_PATH)/../../core))
+# ifeq (,$(wildcard $(LOCAL_PATH)/../../core))
+# TODO(b/204371734) temporarily disable this conditional until tradefederation/core is bootstrapped into the tree
+ifeq (,$(wildcard $(LOCAL_PATH)/../../doesnotexist))
 .PHONY: tradefed-core
 tradefed-core: tradefed atest_tradefed.sh
 .PHONY: tradefed-all
